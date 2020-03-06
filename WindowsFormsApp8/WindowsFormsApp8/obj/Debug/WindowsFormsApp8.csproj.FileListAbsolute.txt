@@ -12,3 +12,4 @@ C:\Users\Newingha\source\repos\WindowsFormsApp8\WindowsFormsApp8\bin\Debug\Micro
 C:\Users\Newingha\source\repos\WindowsFormsApp8\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.csproj.CopyComplete
 C:\Users\Newingha\source\repos\WindowsFormsApp8\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.exe
 C:\Users\Newingha\source\repos\WindowsFormsApp8\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.pdb
+C:\Users\Newingha\source\repos\WindowsFormsApp8\WindowsFormsApp8\obj\Debug\WindowsFormsApp8.csprojAssemblyReference.cache

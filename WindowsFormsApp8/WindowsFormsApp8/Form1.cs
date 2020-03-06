@@ -31,8 +31,10 @@ namespace WindowsFormsApp8
             string music = @"\Music\";
             string videos = @"\Videos\";
             string favorites = @"\Favorites\";
-            string chrome = @"\AppData\Local\Google\Chrome\User Data\Default\Bookmarks.bak";
-            string chromeDict = @"\AppData\Local\Google\Chrome\User Data\Default\Custom Dictionary.txt";
+            string chrome = @"\AppData\Local\Google\Chrome\User Data\Default\";
+            string chromeDict = @"\AppData\Local\Google\Chrome\User Data\Default\";
+            string chromeFile = @"\AppData\Local\Google\Chrome\User Data\Default\Bookmarks.bak";
+            string chromeDictFile = @"\AppData\Local\Google\Chrome\User Data\Default\Custom Dictionary.txt";
             string firefox = @"\AppData\Roaming\Mozilla\Firefox\Profiles\";
             string pictures = @"Pictures";
             string quickParts = @"\application data\microsoft\templates";
@@ -46,9 +48,6 @@ namespace WindowsFormsApp8
             string oDBA = @"\ODBA";
             string windowsDict = @"\AppData\Roaming\Microsoft\UProof";
             string fonts = @"C:\Windows\Fonts";
-
-
-
 
             if (checkBox1.Checked)
             {
@@ -230,26 +229,19 @@ namespace WindowsFormsApp8
             if (checkBox7.Checked)
             {
                 string sourcePath = first + chrome;
+                string sourcePathFile = first + chromeFile;
                 //build the destination for this directory
                 string target = textBox2.Text;
                 //need to append the directory data to the variable
                 string targetPath = target + chrome;
+                string targetPathFile = target + chromeFile;
 
                 //create directory if not already done, if already there this does nothing
                 System.IO.Directory.CreateDirectory(targetPath);
 
                 if (System.IO.Directory.Exists(sourcePath))
                 {
-                    string[] files = System.IO.Directory.GetFiles(sourcePath);
-
-                    // Copy the files and overwrite destination files if they already exist.
-                    foreach (string s in files)
-                    {
-                        // Use static Path methods to extract only the file name from the path.
-                        string fileName = System.IO.Path.GetFileName(s);
-                        string destFile = System.IO.Path.Combine(targetPath, fileName);
-                        System.IO.File.Copy(s, destFile, true);
-                    }
+                    File.Copy(sourcePathFile, targetPathFile, true);
                 }
                 else
                 {
@@ -259,26 +251,19 @@ namespace WindowsFormsApp8
             if (checkBox8.Checked)
             {
                 string sourcePath = first + chromeDict;
+                string sourcePathFile = first + chromeDictFile;
                 //build the destination for this directory
                 string target = textBox2.Text;
                 //need to append the directory data to the variable
                 string targetPath = target + chromeDict;
+                string targetPathFile = target + chromeDictFile;
 
                 //create directory if not already done, if already there this does nothing
                 System.IO.Directory.CreateDirectory(targetPath);
 
                 if (System.IO.Directory.Exists(sourcePath))
                 {
-                    string[] files = System.IO.Directory.GetFiles(sourcePath);
-
-                    // Copy the files and overwrite destination files if they already exist.
-                    foreach (string s in files)
-                    {
-                        // Use static Path methods to extract only the file name from the path.
-                        string fileName = System.IO.Path.GetFileName(s);
-                        string destFile = System.IO.Path.Combine(targetPath, fileName);
-                        System.IO.File.Copy(s, destFile, true);
-                    }
+                    File.Copy(sourcePathFile, targetPathFile, true);
                 }
                 else
                 {
